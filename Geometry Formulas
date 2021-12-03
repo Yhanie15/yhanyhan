@@ -1,0 +1,87 @@
+Pprogram Geometry Formulas by combining the programs Area of the Rectangle, Triangle, Parallelogram, Trapezoid, and Rectangular Solid into a single program.
+
+Your program must have a menu driven interface controlled by the nested if else condition.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int number;
+    float l,w,a,b,h,b1,b2,v;
+    printf ("\n Choose your desire computation. \n");
+    printf ("Enter 1 for  Area of Rectangle \n");
+    printf ("Enter 2 for  Area of Parallelogram \n");
+    printf ("Enter 3 for  Area of Triangle \n");
+    printf ("Enter 4 for  Area of Trapezoid \n");
+    printf ("Enter 5 for  Volume of Rectangular Solid \n");
+
+    printf ("I choose: ");
+    scanf ("%i", & number);
+
+
+    if (number == 1 )
+    {
+
+        printf("Enter the lenght of the rectangle: ");
+        scanf("%f", & l);
+        printf("Enter the width of the rectangle: ");
+        scanf("%f", & w);
+        a= l*w;
+        printf("The area of rectangle is = %f", a);
+
+    }
+    else if (number == 2)
+    {
+
+       printf("Enter the base of the parallelogram: ");
+       scanf("%f", & b);
+       printf("Enter the height of the parallelogram: ");
+       scanf("%f", & h);
+       a= b*h;
+       printf("The area of parallelogram is = %f", a);
+
+    }
+    else if (number == 3)
+    {
+
+       printf("Enter the base of triangle: ");
+       scanf("%f",&b);
+       printf("Enter the height of the triangle: ");
+       scanf("%f", & h);
+       a= b/2*h;
+       printf("The area of triangle is = %f", a);
+
+    }
+    else if (number == 4)
+    {
+
+       printf("Enter the 2 base of the trapezoid, seperated by space: ");
+       scanf("%f %f",&b1,&b2);
+       printf("Enter the height of the trapezoid: ");
+       scanf("%f", & h);
+       a= (b1+b2)/2*h;
+       printf("The area of trapezoid is = %f", a);
+
+    }
+    else if (number == 5)
+    {
+
+       printf("Lenght of the rectangular solid: ");
+       scanf("%f",&l);
+       printf("Width of the rectangular solid: ");
+       scanf("%f", & w);
+       printf("Heigh of the rectangular solid: ");
+       scanf("%f", & h);
+       v= l*w*h;
+       printf("The volume of the rectangular solid is = %f", v);
+
+    }
+    else
+    {
+        printf("OUT OF RANGE");
+
+    }
+     getchar();
+}
+
