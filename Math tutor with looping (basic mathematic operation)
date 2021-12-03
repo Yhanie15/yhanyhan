@@ -1,0 +1,198 @@
+Write a program for Math Tutor including the 4 basic math operations Addition, Subtraction, Multiplication, and Division.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void addition();
+void subtraction();
+void multiplication();
+void division();
+int displaymenu();
+int condition;
+
+int main(){
+
+
+   condition = displaymenu();
+    switch(condition){
+        case 1:
+            addition();
+            break;
+        case 2:
+            subtraction();
+            break;
+        case 3:
+            multiplication();
+            break;
+        case 4:
+            division();
+           
+    }
+
+
+if(condition>4 )
+    printf("\n Invalid! Please enter 1,2,3,4 only!\n");
+    
+return(0);
+}
+
+int displaymenu()
+  {
+
+        int choice;
+
+             printf(" _________________________\n");
+             printf("|           MENU          |\n");
+             printf("|_________________________|\n");
+             printf("| Enter 1. Addition       |\n");
+             printf("| Enter 2. Subtration     |\n");
+             printf("| Enter 3. Multiplication |\n");
+             printf("| Enter 4. Division       |\n");
+             printf("|_________________________|\n");
+             
+             printf("\n You Choose: ");
+             scanf("%i",&choice);
+			  
+			
+			     return choice; 
+  }
+
+ 
+void addition()
+{   
+       int num1,num2, answer,x,input,score;
+       printf("Input number of attempt: ");
+       scanf("%i",& input);  
+              
+    for (x =1; x <= input; x++)
+{
+
+        srand(time(NULL));
+        num1=rand()%100;
+        num2=rand()%100;
+
+        printf("\n What is %i +%i = ",num1,num2);
+        scanf("%i",&answer);
+
+if((num1+num2)==answer)
+    {
+        printf("\nCorrect!\n");
+        score = score +1;
+        printf ("\n Your score is: %i/%i\n",score,input);
+    }
+else
+       {
+	    printf("\nIncorrect!\n\n");
+        printf("\n The correct answer is %i",num1+num2);
+        printf ("\nYour score is: %i/%i\n",score,input);
+      }
+
+} 
+}
+
+
+void subtraction()
+{
+     int num1,num2, answer,x,input,score;
+       printf("Input number of attempt: ");
+       scanf("%i",& input);   
+       
+    for (x =1; x <= input; x++)
+    {
+    
+        srand(time(NULL));
+        num1=rand()%100;
+        num2=rand()%100;
+
+        printf("\n What is %i-%i = ",num1,num2);
+        scanf("%i",&answer);
+
+        if((num1-num2)==answer){
+        printf("\nCorrect!\n");
+        score = score +1;
+        printf ("\n Your score is: %i/%i\n",score,input);
+}
+else
+  {
+    printf("\n Incorrect!\n");
+    printf("\n The correct answer is %i  ",num1-num2);
+    printf ("\n Your score is: %i/%i\n",score,input);
+  }   
+}
+}
+
+void multiplication()
+{
+	   int num1,num2, answer,x,input,score;
+       printf("Input number of attempt: ");
+       scanf("%i",& input);  
+       
+       for (x =1; x <= input; x++)
+       {
+	
+        srand(time(NULL));
+        num1=rand()%100;
+        num2=rand()%100;
+
+        printf("\n What is %i*%i = ",num1,num2);
+        scanf("%i",&answer);
+
+if((num1*num2)==answer)
+   {
+        printf("\n Correct!\n");
+        score = score +1;
+        printf ("\n Your score is: %i/%i\n",score,input);
+   }
+else
+   {
+    printf("\n Incorrect!\n");
+    printf("\n The correct answer is %i\n",num1*num2);
+    printf ("\n Your score is: %i/%i\n",score,input);
+  }  
+}
+}
+
+void division()
+{   
+      int num1,num2, answer,x,input,xanswer,remain, remainder,score;
+       printf("Input number of attempt: ");
+       scanf("%i",& input);  
+       
+        for (x =1; x <= input; x++)
+        {
+		
+        srand(time(NULL));
+        num1=rand()%100;
+        num2=rand()%100;
+
+        answer = num1 / num2;
+        remain = num1 % num2;
+
+
+        printf("\n What is %i/%i = ",num1,num2);
+        scanf("%i",&xanswer);
+
+
+if(remain > 0)
+  {
+    printf("\n Remainder = ");
+    scanf("%i",&remainder);
+  }
+
+
+
+if(answer==xanswer && remain==remainder)
+  {
+    printf("\n\n Correct!\n");
+    score = score +1;
+    printf ("\n Your score is: %i/%i\n",score,input);
+  }
+else
+  {
+    printf("\nIncorrect!\n");
+    printf("\n The correct answer is %i with a remainder of %i\n",answer, remainder);
+    printf ("\n Your score is: %i/%i\n",score,input);
+  }
+}
+}
